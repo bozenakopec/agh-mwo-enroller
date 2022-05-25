@@ -1,19 +1,18 @@
 package com.company.enroller.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "meeting")
 public class Meeting {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	@Column
@@ -74,5 +73,4 @@ public class Meeting {
 	public Collection<Participant> getParticipants() {
 		return participants;
 	}
-
 }
